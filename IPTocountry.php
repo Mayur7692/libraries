@@ -9,4 +9,15 @@ if($query && $query['status'] == 'success') {
 } else {
    echo 'Unable to get location';
 }
+
+/*********************************************************************************
+        OPTIONAL CODE WITH WHOIS
+**********************************************************************************/
+$ip = $_SERVER['REMOTE_ADDR']; // the IP address to query
+//$ip="24.48.176.0";
+$query = @unserialize(file_get_contents('http://ip-api.com/php/'.$ip));
+echo "<pre>";
+print_r($query);
+echo "</pre>";
+
 ?>
